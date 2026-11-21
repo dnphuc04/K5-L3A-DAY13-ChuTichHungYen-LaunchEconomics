@@ -14,7 +14,7 @@
 |   1 |   Đồng Ngọc Phúc     |   2A202603399   |   dnphuc04@gmail.com    |    dnphuc04    |    Trưởng nhóm, giữ hồ sơ và kiểm tra từng giai đoạn     |
 |   2 |    Nguyễn Việt Hưng    |   2A2026   |       |        |    Người kiểm số     |
 |   3 |    Vũ Văn Hảo    |      |       |        |    Người gán nhãn 2     |
-|   4 |   Lê Thái Dương    |      |       |        |    Người gán nhãn 1     |
+|   4 |   Lê Thái Dương    |   2A202603415   |   duonglt3737@gmail.com   |   pophi5   |    Người gán nhãn 1     |
 |   5 |   Nguyễn Huy Hoàng    |   2A202603366   |  nguyenhuyhoangtuho@gmail.com     |    nguyen-huy-hoang-1708    |    Người viết code     | 
 
 Bốn vai của lab:
@@ -68,3 +68,18 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Bằng chứng
 
 - `src/lab13.py`, `report/team/bang_chi_phi.md`, `report/team/MSSV_NguyenHuyHoang.md`; output `cd src && python lab13.py`.
+
+## LeThaiDuong-2A202603415
+
+### Phần việc phụ trách
+
+- Người gắn nhãn 1: đọc đề, theo dõi điều kiện "Xong khi"; gắn nhãn 20 ca độc lập ở CP3 (`report/team/bang_loi.md`).
+
+### Đóng góp cụ thể
+
+- Rà soát yêu cầu đề bài và các quy tắc bắt buộc trong `CHECKPOINTS.md`, `RULES.md`, `SUBMISSION.md`.
+- Tự gắn nhãn độc lập 20 ca lỗi theo 5 nhóm Google PAIR (nhánh `duong/cp3-nhan1`, commit `44aa361`), phối hợp cùng Người gắn nhãn 2 hoàn thiện `report/team/bang_loi.md`.
+
+### Bằng chứng
+
+- Nhánh `duong/cp3-nhan1` (commit `44aa361`, `20cf1d2`), `TEAM.md`, `report/team/bang_loi.md`, `report/team/2A202603415_LeThaiDuong.md`.
