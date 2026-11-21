@@ -32,7 +32,7 @@ Gồm 10 event có gắn `trace_id` để liên kết đồng bộ với trace c
 **Kiểm tra chéo:**
 - **Chỉ số chính (% đóng 24h & không mở lại 7 ngày):** Tính từ `ticket_closed` (`so_gio_xu_ly <= 24`) và không có event `ticket_reopened` với cùng `trace_id` trong vòng 7 ngày.
 - **Chỉ số dùng (Tỉ lệ bỏ qua gợi ý):** Tính từ event `staff_review_decision` khi trường `quyet_dinh` nhận giá trị `sua` hoặc `bo`.
-- **Chỉ số an toàn (Tỉ lệ mở lại 7 ngày):** Đếm số event `ticket_reopened` chia cho tổng số event `ticket_closed`.
+- **Chỉ số an toàn (Tỉ lệ mở lại 7 ngày):** Chia số yêu cầu duy nhất có event `ticket_reopened` trong cửa sổ 7 ngày cho tổng số yêu cầu của cùng tập theo dõi, lấy từ `refund_request_created`. Ghép event theo `trace_id` và đếm mỗi yêu cầu một lần.
 - **Chỉ số dùng đề xuất:** Đếm số event `agent_suggestion_shown` chia cho tổng số event `refund_request_created` có `arm == 'intervention'`.
 - **Chỉ số an toàn đề xuất:** Tính từ event `audit_sample_checked` với điều kiện `lech != 0`.
 
@@ -43,5 +43,5 @@ Các số liệu lấy trực tiếp từ bảng phân tích độ nhạy (`bang
 | Rủi ro | Tác động đã tính | Dấu hiệu theo dõi | Hành động | Người phụ trách |
 | --- | --- | --- | --- | --- |
 | Số ca làm lại tăng gấp đôi | Chi phí mỗi việc thành công tăng **+51,8%**, lên **6.787 đ** [simulated] | Tỉ lệ làm lại theo tuần vượt quá 7% (đợt chạy thử: 4,9% trong phạm vi) | Tạm thời thu hẹp phạm vi về riêng `noi_dia`, rà soát 20 trace gần nhất có ca làm lại | PM trợ lý hoàn phí |
-| Tình trạng xem lại 100% kéo dài | Chi phí lên **11.743 đ (0,98×)** đến **12.414 đ (1,03×)** [simulated], triệt tiêu lợi nhuận | Tỉ lệ yêu cầu được xem lại vẫn > 50% vào cuối giai đoạn rollout 25% | Kích hoạt lộ trình giảm xem lại theo bậc đối với nhân viên đạt tỉ lệ sửa/bỏ < 15% | Trưởng nhóm CSKH |
+| Tình trạng xem lại 100% kéo dài | Chi phí lên **11.743–12.415 đ/việc thành công (0,98–1,03×)** [simulated] | Tỉ lệ yêu cầu được xem lại vẫn > 50% vào cuối giai đoạn rollout 25% | Kích hoạt lộ trình giảm xem lại theo bậc đối với nhân viên đạt tỉ lệ sửa/bỏ < 15% | Trưởng nhóm CSKH |
 | Khối lượng xử lý thực tế thấp | Chi phí cố định 40 tr/tháng làm tăng **+1.185 đ/việc** (ở 45.000 yc/tháng) và tăng **+2.370 đ/việc** nếu khối lượng giảm 50% [simulated] | Số yêu cầu thành công trung bình tuần đạt dưới 50% kế hoạch dự kiến | Dừng mở rộng quy mô pilot, đàm phán lại chi phí bản quyền/hạ tầng cố định | PM trợ lý hoàn phí |

@@ -4,8 +4,8 @@
 
 - Tên nhóm: ChuTichHungYen
 - Lớp: L3A 
-- Repo nhóm: `K5-L3A-DAY13-TenNhom-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- Repo nhóm: [K5-L3A-DAY13-ChuTichHungYen-LaunchEconomics](https://github.com/dnphuc04/K5-L3A-DAY13-ChuTichHungYen-LaunchEconomics)
+- Nhánh nộp: `main`. Commit chốt: chờ xác nhận bản nộp.
 
 ## Thành viên
 

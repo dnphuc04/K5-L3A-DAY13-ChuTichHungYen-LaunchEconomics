@@ -35,7 +35,7 @@ Xây dựng bộ hồ sơ launch v0 và kế hoạch pilot bảo vệ trước h
 
 ## 5. Khó khăn và cách xử lý
 
-- *Tính toán cỡ mẫu khi phân cụm nhân viên:* Với giới hạn 40 nhân viên, không thể đạt được MDE 5 điểm với statistical power 0,80. Nhóm đã tính toán và quyết định chấp nhận mức chênh tối thiểu phát hiện được là 6 điểm phần trăm (MDE = 0,06; n = 859 yêu cầu/nhóm, m ≥ 299 yêu cầu/nhân viên) và công khai việc power ở mức 5 điểm giảm còn 0,64 trong hồ sơ.
+- *Tính toán cỡ mẫu khi phân cụm nhân viên:* Với 40 nhân viên, nhóm chọn MDE 6 điểm phần trăm ở power 0,80. Mỗi nhánh cần 859 yêu cầu hiệu dụng, tương ứng mục tiêu thu 5.980 yêu cầu (20 nhân viên × 299 yêu cầu). Nếu tác động thực là 5 điểm phần trăm, power giảm còn khoảng 0,64.
 - *Nguy cơ chi phí vượt ngưỡng khi xem lại 100%:* Kết quả B4 chỉ ra nếu phải xem lại 100% với thời gian làm lại thực tế (15,3 phút), chi phí tăng lên 12.415 đ (1,03×), đắt hơn nhân viên tự làm. Nhóm đã đưa điều kiện xây dựng lộ trình giảm tỷ lệ xem lại theo bậc vào điều kiện bắt buộc của Gate 2a.
 
 ## 6. Tổng hợp đóng góp

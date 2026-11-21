@@ -35,19 +35,22 @@ pilot:
     control_share: 0.5
     randomized: true
   rollout: [0.10, 0.25, 0.50]
+  rollout_definition: "Mở quyền cho 4, 10 rồi 20 nhân viên trong nhánh can thiệp đã phân ngẫu nhiên. Mỗi bậc tối thiểu một tuần và chỉ tăng bậc sau khi rà an toàn. Phân tích hiệu quả từ bậc 50%, đối chứng đồng thời."
   primary_metric:
     name: dong_trong_24h_khong_mo_lai_7_ngay
     baseline: 0.70
     mde: 0.06
     alpha: 0.05
     power: 0.80
-    n_per_arm: 859
+    n_per_arm: 859  # Cỡ mẫu hiệu dụng mỗi nhánh sau khi tính hiệu ứng cụm
+    requests_per_staff: 299
+    target_requests_per_arm: 5980
     design_effect: 6.96
     clusters_per_arm: 20
   identifiability:
     concurrent_control: "20 nhân viên nhóm đối chứng xử lý đồng thời trong cùng ca làm việc tại 12 depot"
     spillover_risk: "Kiểm soát truy cập theo tài khoản nhân viên staff_id và ghi log truy cập để tránh dùng chung"
-    predeclared: "Chỉ số chính, MDE 0,06, 3 luật dừng và thời hạn quyết định được chốt trước khi bấm chạy"
+    predeclared: "Khóa phân nhóm và chỉ số trước khi chạy. Chỉ xem xét mở rộng khi đủ 20 cụm mỗi nhánh, đạt cỡ mẫu hiệu dụng 859, các yêu cầu đã đủ 7 ngày theo dõi, chênh lệch quan sát ít nhất 6 điểm phần trăm với p hai phía dưới 0,05 sau khi tính hiệu ứng cụm, và không còn luật dừng đang kích hoạt."
   stop_rules:
     - "NẾU tỉ lệ mở lại trong 7 ngày của nhóm trợ lý cao hơn nhóm đối chứng từ 2 điểm phần trăm trở lên hoặc vượt 6% tuyệt đối, hoặc phát hiện từ 1 ca hoàn trùng tiền TRONG 3 ngày liên tiếp THÌ Giám đốc vận hành tắt trợ lý trong vòng 30 phút KHÔNG THÌ không được phép chuyển sang bước rollout tiếp theo"
     - "NẾU chi phí mỗi việc thành công vượt quá 8.000 đ TRONG 2 tuần liên tiếp THÌ PM trợ lý thu hẹp phạm vi về riêng noi_dia và giới hạn tối đa 2 lần chạy KHÔNG THÌ không được mở rộng cho đơn hàng nặng hang_nang"
@@ -55,6 +58,7 @@ pilot:
   interim_looks: "chỉ kiểm tra chỉ số an toàn"
   rollback: "Giám đốc vận hành bấm cờ tắt tính năng trong cổng quản trị hệ thống, có hiệu lực trong 30 phút; toàn bộ yêu cầu hoàn phí chuyển về quy trình nhân viên tự xử lý thủ công"
   decision_date: "2027-01-05"
+  decision_if_underpowered: "Nếu đến ngày quyết định vẫn thiếu cụm, thiếu mẫu hiệu dụng hoặc chưa đủ 7 ngày theo dõi, giữ nguyên phạm vi và chốt lại lịch theo dõi trước khi thu thêm mẫu."
   simulated_inputs:
     - "4.472 đ: chi phí mỗi việc thành công trung bình từ dữ liệu chạy thử"
     - "5.865 đ: chi phí toàn hệ thống mỗi yêu cầu sau khi bù 222 ca chuyển nhân viên"
