@@ -12,7 +12,7 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 |   Đồng Ngọc Phúc     |   2A202603399   |   dnphuc04@gmail.com    |    dnphuc04    |    Trưởng nhóm, giữ hồ sơ và kiểm tra từng giai đoạn     |
-|   2 |    Nguyễn Việt Hưng    |   2A2026   |       |        |    Người kiểm số     |
+|   2 |    Nguyễn Việt Hưng    |   2A202603411   | robinnguyen2004@gmail.com      | robinnguyen2004       |    Người kiểm số     |
 |   3 |    Vũ Văn Hảo    |      |       |        |    Người gán nhãn 2     |
 |   4 |   Lê Thái Dương    |      |       |        |    Người gán nhãn 1     |
 |   5 |   Nguyễn Huy Hoàng    |   2A202603366   |  nguyenhuyhoangtuho@gmail.com     |    nguyen-huy-hoang-1708    |    Người viết code     | 
@@ -65,3 +65,18 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Bằng chứng
 
 - `src/lab13.py`, `report/team/bang_chi_phi.md`, `report/team/MSSV_NguyenHuyHoang.md`; output `cd src && python lab13.py`.
+
+## NguyenVietHung-2A202603411
+
+### Phần việc phụ trách
+
+- Người kiểm số: tính tay để đối chiếu số của `src/lab13.py` ở A, B và D1; cùng người viết code điền và soát `report/team/bang_chi_phi.md`; điền chú thích D1 trong `report/team/pilot_plan.yaml`.
+
+### Đóng góp cụ thể
+
+- Mục "Kiểm tra tay (người kiểm số)": số đầu vào đếm thẳng từ hai file CSV (890 / 1.132 phút [simulated], 5.600 lần gọi tool, 978 việc thành công) và 9 dòng đối chiếu A2, A4, B1–B4. Cả 9 khớp code, lệch 0%: 4.472 đ [simulated], 16,3×, 0,49×, 1.185 đ, 4.599 đ = 0,38× [simulated], 6.543 đ, 6.901.220 đ, 11.743 đ = 0,98× [simulated].
+- Giải tay 5 câu D1: 1.251 · 3.103 (42 người mỗi nhóm) · 1.000 · 300 · m ≥ 299 (DE 6,96).
+
+### Bằng chứng
+
+- `report/team/bang_chi_phi.md` (mục "Kiểm tra tay"), `report/team/pilot_plan.yaml` (chú thích D1), `report/team/2A202603411_NguyenVietHung.md`.

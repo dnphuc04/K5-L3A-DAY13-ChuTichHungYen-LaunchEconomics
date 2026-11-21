@@ -3,11 +3,16 @@
 # Kiểm tra đọc được: python -c "import yaml; yaml.safe_load(open('../report/team/pilot_plan.yaml'))"
 #
 # D1 · Cỡ mẫu (baseline 0,70; mục tiêu +5 điểm; alpha 0,05; power 0,8; ICC 0,02)
-#   a) Chia theo yêu cầu:
-#   b) Theo nhân viên, m = 75:
-#   c) 20 nhân viên mỗi nhóm:
-#   d) 6 depot mỗi nhóm:
+#   (Kiểm tra tay bởi người kiểm số; đối chiếu với output D1 của src/lab13.py)
+#   a) Chia theo yêu cầu: p̄ = 0,725; (1,95996 × √0,39875 + 0,84162 × √0,3975)² ÷ 0,05²
+#      = (1,23766 + 0,53063)² ÷ 0,0025 = 1.250,7 → 1.251 yêu cầu mỗi nhóm (code: 1.251) · Khớp
+#   b) Theo nhân viên, m = 75: DE = 1 + (75 − 1) × 0,02 = 2,48 ; n = 1.251 × 2,48 = 3.103 mỗi nhóm
+#      → 3.103 ÷ 75 = 41,4 → 42 người mỗi nhóm, tổng 84 > 40 người: không đủ người (code: 3.103; 42 người) · Khớp
+#   c) 20 nhân viên mỗi nhóm: tối đa c ÷ ICC = 20 ÷ 0,02 = 1.000 < 1.251: không đạt (code: 1.000) · Khớp
+#   d) 6 depot mỗi nhóm: tối đa 6 ÷ 0,02 = 300 < 1.251: không đạt (code: 300) · Khớp
 #   e) Mức chênh 6 điểm (859 mỗi nhóm), 20 nhân viên mỗi nhóm:
+#      20m ≥ 859 × (1 + (m − 1) × 0,02) → 20m ≥ 841,82 + 17,18m → 2,82m ≥ 841,82 → m ≥ 298,5 → m ≥ 299 ;
+#      DE = 1 + 298 × 0,02 = 6,96 ; kiểm lại 20 × 299 ÷ 6,96 = 859,2 ≥ 859 (code: 299; 6,96) · Khớp
 #
 # D2 · Năm câu kiểm tra "tách được tác động" với cách chia đã chọn (mỗi câu một dòng):
 #   1. Đối chứng chạy cùng thời gian:
