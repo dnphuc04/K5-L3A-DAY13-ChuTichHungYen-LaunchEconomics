@@ -11,10 +11,11 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        |         |
-|   2 |        |      |       |        |         |
-|   3 |        |      |       |        |         |
-|   4 |        |      |       |        |         |
+|   1 |   Đồng Ngọc Phúc     |   2A202603399   |   dnphuc04@gmail.com    |    dnphuc04    |    Trưởng nhóm, giữ hồ sơ và kiểm tra từng giai đoạn     |
+|   2 |    Nguyễn Việt Hưng    |   2A2026   |       |        |    Người kiểm số     |
+|   3 |    Vũ Văn Hảo    |      |       |        |    Người gán nhãn 2     |
+|   4 |   Lê Thái Dương    |      |       |        |    Người gán nhãn 1     |
+|   5 |   Nguyễn Huy Hoàng    |      |       |        |    Người viết code     | 
 
 Bốn vai của lab:
 
