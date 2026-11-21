@@ -38,19 +38,22 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
 
-## HoVaTen-MSSV
+## VuVanHao
 
 ### Phần việc phụ trách
 
--
+- Người gắn nhãn 2 kiêm giữ hồ sơ: Gắn nhãn độc lập 20 ca lỗi ở CP3; hoàn thiện và giữ hồ sơ launch v0 (`report/team/ho_so_launch_v0.md`) cho Gate 2a; đồng phụ trách `report/team/bang_loi.md` và `report/team/chi_so.md`.
 
 ### Đóng góp cụ thể
 
--
+- Hoàn thành bộ nhãn người 2 cho 20 ca lỗi đạt tỷ lệ đồng thuận 90% (18/20 ca) với người 1; xây dựng quy tắc phân biệt cho ca 6 và ca 8.
+- Xây dựng bảng khắc phục 5 ca lỗi đủ 5 nhóm Google PAIR với cách phát hiện đo được bằng event và vai trò phụ trách cụ thể.
+- Tổng hợp và hoàn thiện `ho_so_launch_v0.md` chuẩn 1 trang, đủ 7 mục, 100% số giả lập gắn nhãn `[simulated]` và trạng thái Giả lập, không dùng từ "production", đề xuất "Go có điều kiện" kèm 4 điều kiện khả thi.
+- Soạn thảo đặc tả 10 event có `trace_id` và 3 dòng rủi ro kinh tế trong `chi_so.md`.
 
 ### Bằng chứng
 
--
+- `report/team/bang_loi.md`, `report/team/ho_so_launch_v0.md`, `report/team/chi_so.md`, `report/team/group_report.md`, `report/team/MSSV_VuVanHao.md`.
 
 ## NguyenHuyHoang-2A202603366
 
