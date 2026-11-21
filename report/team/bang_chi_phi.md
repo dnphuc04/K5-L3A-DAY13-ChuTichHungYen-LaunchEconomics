@@ -92,3 +92,40 @@ Chi phí cả hệ thống = tổng chi phí trợ lý + 12.000 đ × số yêu 
 - Phạm vi `noi_dia` + `hang_nang`: 948 yêu cầu có lần chạy ok × 5 phút = 9.480.000 đ, 48 ca làm lại × 9 phút = 864.000 đ, token + tool 224.513 đ → 10.568.513 đ / 900 = **11.743 đ = 0,98×** của 12.000 đ [simulated].
 - Nếu dùng phút làm lại trung bình trong dữ liệu (15,3 phút/ca, trung vị 14,5): 12.415 đ = **1,03×** [simulated], tức đắt hơn nhân viên tự làm. Hoà vốn khi mỗi lần xem lại ≤ 5,1 phút (làm lại 9 phút) hoặc ≤ 4,8 phút (làm lại 15,3 phút) [simulated].
 - Pilot cần học được tỉ lệ xem lại có thể giảm an toàn tới đâu và thời gian mỗi lần xem lại có dưới 5 phút không, vì xem lại chiếm khoảng 90% chi phí khi xem lại 100%.
+
+## Kiểm tra tay (người kiểm số)
+
+Người kiểm số: Nguyễn Việt Hưng. Số đầu vào đếm trực tiếp trên `src/logix_requests.csv` / `src/logix_runs.csv` (bộ lọc Excel hoặc đếm tay), không lấy từ output code. Ngưỡng chấp nhận: lệch ≤ 2%. Lệch (%) = (tay − code) / code × 100.
+
+### Số đầu vào tự đếm
+
+| Đại lượng | Cách đếm | Kết quả tự đếm | Code |
+| --- | --- | ---: | ---: |
+| Tổng phút xem lại | tổng cột `phut_xem_lai_simulated` | 890 | 890 |
+| Tổng phút làm lại | tổng cột `phut_lam_lai_simulated` | 1132 | 1.132 |
+| Tổng lần gọi tool | tổng cột `tool_calls` | 5600 | 5.600 |
+| Số việc thành công | đếm `ket_qua` = `thanh_cong` | 978 | 978 |
+| Số yêu cầu không thành công | 1.200 − số việc thành công | 222 | 222 |
+| Tổng token đầu vào / đầu ra (1.624 lần chạy) | tổng cột `tokens_in`, `tokens_out` | 5.771.712 / 734.774 | |
+| Tiền token | 5.771,712 × 26 + 734,774 × 130 | 245.585 đ | 245.585 đ |
+| Phạm vi noi_dia + hang_nang | lọc `loai` | 982 yêu cầu, 900 thành công, token + tool 224.513 đ, 644 phút xem lại, 780 phút làm lại [simulated] | 982 · 900 |
+| Phạm vi: yêu cầu có ≥ 1 lần chạy `ok` / ca `lam_lai` | lọc `status` = ok theo `request_id`; đếm `ket_qua` = `lam_lai` | 948 / 48 | 948 / 48 |
+| Giới hạn 2 lần: việc thành công, tổng chi phí trợ lý | bỏ `attempt` > 2; yêu cầu `so_lan_chay` > 2 coi là chuyển nhân viên | 966; 291.220 + (855 + 1.046) × 2.000 = 4.093.220 đ [simulated] | 4.093.220 đ |
+
+### Đối chiếu
+
+| # | Số kiểm | Cách tính tay | Kết quả tay | Code | Lệch | Kết luận |
+| --: | --- | --- | ---: | ---: | ---: | --- |
+| 1 | A2 · Chi phí mỗi việc thành công [simulated] | (245.585 + 84.000 + 890 × 2.000 + 1.132 × 2.000) ÷ 978 = 4.373.585 ÷ 978 | 4.472 đ | 4.472 đ | 0,0% | Khớp |
+| 2 | A2 · Gấp bao nhiêu lần hoá đơn/yêu cầu | (245.585 + 84.000) ÷ 1.200 = 274,65 đ ; 4.472 ÷ 274,65 | 16,3× | 16,3× | 0,0% | Khớp |
+| 3 | A2 · So với nhân viên tự làm [simulated] | (4.373.585 + 222 × 12.000) ÷ 1.200 = 7.037.585 ÷ 1.200 ; 5.865 ÷ 12.000 | 5.865 đ = 0,49× | 5.865 đ = 0,49× | 0,0% | Khớp |
+| 4 | A4 · Cố định mỗi việc, 45.000 yc/tháng | 45.000 × 900 ÷ 1.200 = 33.750 việc ; 40.000.000 ÷ 33.750 | 1.185 đ | 1.185 đ | 0,0% | Khớp |
+| 5 | A4 · Chi phí + cố định [simulated] | (224.513 + 644 × 2.000 + 780 × 2.000) ÷ 900 = 3.072.513 ÷ 900 = 3.414 ; + 1.185 ; ÷ 12.000 | 4.599 đ = 0,38× | 4.599 đ = 0,38× | 0,0% | Khớp |
+| 6 | B1 · Tự kiểm tra tuyến tính | phần của từng khoản trong tổng 4.373.585: token 245.585 → 5,6% (nửa 2,8%); xem lại 1.780.000 → 40,7% (nửa 20,3%); làm lại 2.264.000 → 51,8% (nửa 25,9%) | 5,6→2,8 · 40,7→20,3 · 51,8→25,9 | 5,6→2,8 · 40,7→20,3 · 51,8→25,9 | 0,0% | Khớp |
+| 7 | B2 · Cặp token × 2 + xem lại × 2 [simulated] | (4.373.585 + 245.585 + 1.780.000) ÷ 978 = 6.399.170 ÷ 978 ; 5,6% + 40,7% | 6.543 đ (+46,3%) | 6.543 đ (+46,3%) | 0,0% | Khớp |
+| 8 | B3 · Cả hệ thống, giới hạn 2 lần [simulated] | 4.093.220 + (1.200 − 966) × 12.000 = 4.093.220 + 234 × 12.000 | 6.901.220 đ | 6.901.220 đ | 0,0% | Khớp |
+| 9 | B4 · Xem lại 100% [simulated] | (948 × 5 × 2.000 + 48 × 9 × 2.000 + 224.513) ÷ 900 = 10.568.513 ÷ 900 ; ÷ 12.000 | 11.743 đ = 0,98× | 11.743 đ = 0,98× | 0,0% | Khớp |
+
+### Ghi chú khi lệch
+
+- Không có dòng nào lệch quá 2%: cả 9 số tính tay khớp output của `src/lab13.py`, số đầu vào đếm trực tiếp từ hai file CSV.
