@@ -36,7 +36,20 @@ report/team/MSSV_HoTen.md
 
 Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
-Sao chép mục dưới đây cho từng thành viên.
+## DongNgocPhuc-2A202603399
+
+### Phần việc phụ trách
+
+- Trưởng nhóm: phân công theo checkpoint, tổng hợp và rà soát bằng chứng A–E trước Gate 2a.
+
+### Đóng góp cụ thể
+
+- Chuẩn bị bản nháp hồ sơ và phương án pilot theo yêu cầu. Rà bản tích hợp của nhóm, làm rõ cỡ mẫu hiệu dụng và số yêu cầu cần thu thập trong phương án phân nhóm theo nhân viên.
+- Đối chiếu số chi phí, tỷ lệ đồng thuận và chỉ số chạy thử. Hoàn thiện mốc kiểm tra của các điều kiện Gate 2a.
+
+### Bằng chứng
+
+- Commit phân công `cf9ab4a`, [báo cáo cá nhân](report/team/2A202603399_DongNgocPhuc.md), [hồ sơ Launch v0](report/team/ho_so_launch_v0.md) và [kế hoạch pilot](report/team/pilot_plan.yaml).
 
 ## VuVanHao-2A202603419
 
