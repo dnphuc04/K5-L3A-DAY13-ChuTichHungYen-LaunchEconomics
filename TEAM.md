@@ -13,7 +13,7 @@
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 |   Đồng Ngọc Phúc     |   2A202603399   |   dnphuc04@gmail.com    |    dnphuc04    |    Trưởng nhóm, giữ hồ sơ và kiểm tra từng giai đoạn     |
 |   2 |    Nguyễn Việt Hưng    |   2A202603411   | robinnguyen2004@gmail.com      | robinnguyen2004       |    Người kiểm số     |
-|   3 |    Vũ Văn Hảo    |      |       |        |    Người gán nhãn 2     |
+|   3 |    Vũ Văn Hảo    |   2A202603419   |       |        |    Người gán nhãn 2     |
 |   4 |   Lê Thái Dương    |   2A202603415   |   duonglt3737@gmail.com   |   pophi5   |    Người gán nhãn 1     |
 |   5 |   Nguyễn Huy Hoàng    |   2A202603366   |  nguyenhuyhoangtuho@gmail.com     |    nguyen-huy-hoang-1708    |    Người viết code     | 
 
@@ -38,7 +38,7 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
 
-## VuVanHao
+## VuVanHao-2A202603419
 
 ### Phần việc phụ trách
 
