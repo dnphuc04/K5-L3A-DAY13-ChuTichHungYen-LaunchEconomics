@@ -5,7 +5,7 @@
 ## 1. Thông tin thành viên
 
 - Họ tên: Vũ Văn Hảo
-- MSSV: (Điền MSSV của bạn vào đây)
+- MSSV: 2A202603419
 - Email: (Điền email của bạn vào đây)
 - Vai trong nhóm: Người gắn nhãn 2 kiêm giữ hồ sơ
 
